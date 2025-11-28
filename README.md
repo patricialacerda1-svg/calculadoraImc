@@ -95,3 +95,5 @@ Seu IMC
 A classificação correspondente
 
 Uma cor indicando a situação
+
+Projeto feito por Patricia Lacerda
