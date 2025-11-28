@@ -1,36 +1,44 @@
-// Seleciona os elementos do DOM
-const inputPeso = document.querySelector("#peso");
-const inputAltura = document.querySelector("#altura");
-const btnCalcular = document.querySelector("#calcular");
+// Selecionando elementos do DOM
+const peso = document.querySelector("#peso");
+const altura = document.querySelector("#altura");
+const btn = document.querySelector("#calcular");
 const resultado = document.querySelector("#resultado");
 
-// Função para calcular IMC
-btnCalcular.addEventListener("click", function () {
-    const peso = Number(inputPeso.value);
-    const altura = Number(inputAltura.value);
+btn.addEventListener("click", function () {
 
-    if (!peso || !altura) {
-        resultado.innerHTML = "Por favor, insira valores válidos!";
+    const p = Number(peso.value);
+    const a = Number(altura.value);
+
+    if (!p || !a) {
+        resultado.innerHTML = "Por favor, preencha os campos!";
+        resultado.className = "result-bad";
         return;
     }
 
-    const imc = (peso / (altura * altura)).toFixed(2);
-    let classificacao = "";
+    const imc = (p / (a * a)).toFixed(2);
+    let msg = "";
+    let classe = "";
 
-    // Classificações completas
     if (imc < 18.5) {
-        classificacao = "Abaixo do peso";
-    } else if (imc >= 18.5 && imc <= 24.9) {
-        classificacao = "Peso normal";
-    } else if (imc >= 25 && imc <= 29.9) {
-        classificacao = "Sobrepeso";
-    } else if (imc >= 30 && imc <= 34.9) {
-        classificacao = "Obesidade Grau I";
-    } else if (imc >= 35 && imc <= 39.9) {
-        classificacao = "Obesidade Grau II";
-    } else if (imc >= 40) {
-        classificacao = "Obesidade Grau III (grave)";
+        msg = "Abaixo do peso";
+        classe = "result-warn";
+    } else if (imc <= 24.9) {
+        msg = "Peso normal";
+        classe = "result-ok";
+    } else if (imc <= 29.9) {
+        msg = "Sobrepeso";
+        classe = "result-warn";
+    } else if (imc <= 34.9) {
+        msg = "Obesidade Grau I";
+        classe = "result-bad";
+    } else if (imc <= 39.9) {
+        msg = "Obesidade Grau II";
+        classe = "result-bad";
+    } else {
+        msg = "Obesidade Grau III (grave)";
+        classe = "result-bad";
     }
 
-    resultado.innerHTML = `Seu IMC é <strong>${imc}</strong> — ${classificacao}.`;
+    resultado.className = classe;
+    resultado.innerHTML = `Seu IMC é <strong>${imc}</strong> — ${msg}`;
 });
