@@ -6,25 +6,25 @@
     <title>Calculadora de IMC</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Container principal da calculadora -->
-    <div class="container">
+    <div class="card">
         <h1>Calculadora de IMC</h1>
 
-        <!-- Campo para digitar o peso -->
-        <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" placeholder="Digite seu peso">
+        <div class="input-group">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" id="peso" placeholder="Ex: 70">
+        </div>
 
-        <!-- Campo para digitar a altura -->
-        <label for="altura">Altura (m):</label>
-        <input type="number" id="altura" placeholder="Digite sua altura" step="0.01">
+        <div class="input-group">
+            <label for="altura">Altura (m)</label>
+            <input type="number" id="altura" step="0.01" placeholder="Ex: 1.70">
+        </div>
 
-        <!-- Botão que dispara o cálculo -->
-        <button id="btnCalcular">Calcular IMC</button>
+        <button id="calcular">Calcular</button>
 
-        <!-- Local onde o resultado será exibido -->
-        <p id="resultado"></p>
+        <p id="resultado">Digite seus dados para calcular</p>
     </div>
 
     <script src="script.js"></script>

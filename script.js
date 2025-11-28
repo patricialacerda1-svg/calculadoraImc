@@ -1,41 +1,36 @@
-// Captura os elementos do HTML
-const btn = document.getElementById("btnCalcular");
-const resultado = document.getElementById("resultado");
+// Seleciona os elementos do DOM
+const inputPeso = document.querySelector("#peso");
+const inputAltura = document.querySelector("#altura");
+const btnCalcular = document.querySelector("#calcular");
+const resultado = document.querySelector("#resultado");
 
-// Função que calcula o IMC ao clicar no botão
-btn.addEventListener("click", function () {
+// Função para calcular IMC
+btnCalcular.addEventListener("click", function () {
+    const peso = Number(inputPeso.value);
+    const altura = Number(inputAltura.value);
 
-    // Pega os valores digitados pelo usuário
-    let peso = document.getElementById("peso").value;
-    let altura = document.getElementById("altura").value;
-
-    // Verifica se os campos foram preenchidos
-    if (peso === "" || altura === "") {
-        resultado.textContent = "⚠️ Preencha todos os campos!";
-        resultado.style.color = "red";
+    if (!peso || !altura) {
+        resultado.innerHTML = "Por favor, insira valores válidos!";
         return;
     }
 
-    // Converte strings para número
-    peso = Number(peso);
-    altura = Number(altura);
-
-    // Fórmula do IMC: peso / altura²
-    let imc = peso / (altura * altura);
+    const imc = (peso / (altura * altura)).toFixed(2);
     let classificacao = "";
 
-    // Define a classificação de acordo com o valor do IMC
+    // Classificações completas
     if (imc < 18.5) {
         classificacao = "Abaixo do peso";
-    } else if (imc < 25) {
+    } else if (imc >= 18.5 && imc <= 24.9) {
         classificacao = "Peso normal";
-    } else if (imc < 30) {
+    } else if (imc >= 25 && imc <= 29.9) {
         classificacao = "Sobrepeso";
-    } else {
-        classificacao = "Obesidade";
+    } else if (imc >= 30 && imc <= 34.9) {
+        classificacao = "Obesidade Grau I";
+    } else if (imc >= 35 && imc <= 39.9) {
+        classificacao = "Obesidade Grau II";
+    } else if (imc >= 40) {
+        classificacao = "Obesidade Grau III (grave)";
     }
 
-    // Exibe o resultado formatado
-    resultado.style.color = "#333";
-    resultado.textContent = `Seu IMC é ${imc.toFixed(2)} — ${classificacao}`;
+    resultado.innerHTML = `Seu IMC é <strong>${imc}</strong> — ${classificacao}.`;
 });
