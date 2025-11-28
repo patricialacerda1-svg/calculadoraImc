@@ -1,79 +1,97 @@
 🧮 Calculadora de IMC
 
-Uma calculadora de IMC (Índice de Massa Corporal) desenvolvida utilizando HTML, CSS e JavaScript (DOM).
-O usuário informa o peso e a altura, e o sistema calcula automaticamente o IMC, exibindo também a classificação.
+Uma calculadora de IMC simples, moderna e responsiva, criada com HTML, CSS e JavaScript (DOM).
+O usuário insere peso e altura, e o sistema calcula o Índice de Massa Corporal, exibindo também a classificação completa, incluindo os graus de obesidade.
 
-📌 Funcionalidades
+🚀 Funcionalidades
 
-Entrada de peso e altura
+✔ Cálculo automático do IMC
+✔ Classificação completa:
 
-Cálculo automático do IMC
+Abaixo do peso
 
-Exibição da classificação de acordo com o IMC
+Peso normal
 
-Interface simples, moderna e responsiva
+Sobrepeso
 
-Lógica feita com DOM (JavaScript manipulando elementos HTML)
+Obesidade Grau I
 
-🛠️ Tecnologias Utilizadas
-Linguagem / Tecnologia	Usada para
-HTML5	Estrutura da aplicação
-CSS3	Estilização e identidade visual
-JavaScript (DOM)	Lógica do cálculo, interação e manipulação dos elementos
-📂 Estrutura de Arquivos
-📁 calculadora-imc
-│── index.html     → Estrutura da página
-│── style.css      → Estilos e identidade visual
-│── script.js      → Lógica do cálculo com DOM
-│── README.md      → Documentação do projeto
+Obesidade Grau II
 
-📸 Interface da Calculadora
+Obesidade Grau III (grave)
+✔ Cores dinâmicas conforme o resultado
+✔ Layout moderno e responsivo
+✔ Animações sutis para melhor experiência
+✔ Interface limpa utilizando DOM para interação
+
+🖼 Prévia do Projeto
+
+(Caso você tenha uma imagem do projeto, coloque aqui depois assim:)
+
+![Prévia do Projeto](./Captura%20de%20tela%202025-11-28%20004734.png)
+
+📂 Estrutura dos Arquivos
+📁 projeto-imc
+│-- index.html
+│-- style.css
+│-- script.js
+│-- README.md
+
+🛠 Tecnologias Utilizadas
+Tecnologia	Uso
+HTML5	Estrutura do projeto
+CSS3	Layout, responsividade e animações
+JavaScript (DOM)	Interação, cálculo e exibição dinâmica
+Google Fonts (Poppins)	Identidade visual moderna
+📘 Como funciona o cálculo
+
+A fórmula utilizada:
+
+IMC = peso / (altura * altura)
 
 
+Exemplo:
 
-▶️ Como Usar
+Peso: 70 kg
+Altura: 1.70 m
 
-Abra o arquivo index.html no navegador
+IMC = 70 / (1.70²)
+IMC = 24.22
 
-Digite o peso (kg)
+📊 Tabela de Classificação
+IMC	Classificação	Cor exibida
+Menor que 18.5	Abaixo do peso	🟡
+18.5 a 24.9	Peso normal	🟢
+25.0 a 29.9	Sobrepeso	🟡
+30.0 a 34.9	Obesidade Grau I	🔴
+35.0 a 39.9	Obesidade Grau II	🔴
+40+	Obesidade Grau III	🔴
+📜 Código JavaScript (DOM) – Resumo
 
-Digite a altura (m)
+Captura valores dos inputs usando document.querySelector.
 
-Clique em Calcular IMC
+Verifica se os dados estão preenchidos.
 
-O resultado e a classificação aparecerão na tela
+Realiza o cálculo do IMC.
 
-📘 Como Funciona o Cálculo
+Mostra mensagem dinâmica com cor correspondente.
 
-A fórmula utilizada é:
+Atualiza o HTML usando innerHTML.
 
-IMC = peso / altura²
-	​
+Altera classes CSS para mudar cores automaticamente.
 
-Classificação utilizada:
+▶ Como usar
 
-Menos de 18.5: Abaixo do peso
+Digite o peso em kg.
 
-18.5 – 24.9: Peso normal
+Digite a altura em metros.
 
-25 – 29.9: Sobrepeso
+Clique em Calcular.
 
-30+: Obesidade
+O sistema exibirá:
 
-🚀 Melhorias Futuras
+Seu IMC
 
-Tema dark mode
+A classificação correspondente
 
-Barra gráfica mostrando o nível do IMC
-
-Histórico de cálculos
-
-Responsividade aprimorada
-
-Animações ao exibir o resultado
-
-📄 Licença
-
-Este projeto é livre para uso e estudos.
-
-Feito por Patricia Lacerda
+Uma cor indicando a situação
