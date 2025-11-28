@@ -1,0 +1,71 @@
+/* Estilização geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background: #e9eef3; /* Fundo suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Caixa principal da calculadora */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px; /* Arredondamento das bordas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    width: 320px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Labels e inputs */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #888;
+    font-size: 15px;
+}
+
+/* Botão de calcular */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff; /* Azul principal */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Efeito hover do botão */
+button:hover {
+    background-color: #005fcc;
+}
+
+/* Resultado */
+#resultado {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
